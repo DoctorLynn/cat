@@ -11,7 +11,9 @@ function loginSubmit(){
 	if(u && p){
 		var url = "config/index/indexConf.json";
 		$.getJSON(url, function(data){
-			data && d = data;
+			if(data){
+				d = data;				
+			}
 		});
 		if(d){
 			if(isAdmin){
