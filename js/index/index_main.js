@@ -7,9 +7,9 @@ var indexMain = {
 function checkUserLogin(d, u, p){
 	var isAdmin = indexMain.isAdmin;
 	if(isAdmin){
-		clearInterval(indexMain.interval);
 		var a = d.admin;
 		if(a){
+			clearInterval(indexMain.interval);
 			jsUtil.maskTopHide();
 			if(u == a.username && p == a.password){
 				window.location.href = "pages/theme/theme_main.html";
@@ -20,6 +20,7 @@ function checkUserLogin(d, u, p){
 	}else{
 		var v = d.visitor, l = v.length, i = 0;
 		if(l > 0){
+			clearInterval(indexMain.interval);
 			jsUtil.maskTopHide();
 			for (; i < l; i++) {
 				if(u == v[i].username && p == v[i].password){

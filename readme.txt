@@ -1,4 +1,5 @@
-﻿
+﻿入口: index.html
+
 1 - config：
 	配置项.
 
