@@ -22,10 +22,8 @@ jsonUtil.getJsonFileData = function(u){
 	    alert("请升级至最新版本的浏览器");  
 	}  
 	if(xhr !=null){  
-		alert(u);
-		alert(jsonUtil.getFileExt(u));
 		if(u && jsonUtil.getFileExt(u) == "json"){
-			xhr.open("GET", "config/index/indexConf.json", true);  
+			xhr.open("GET", u, true);  
 		    xhr.send(null);  
 		    xhr.onreadystatechange=function(){  
 		        if(xhr.readyState == 4 && xhr.status == 200){  
