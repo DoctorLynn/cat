@@ -25,7 +25,7 @@ jsonUtil.getJsonFileData = function(u){
 		alert(u);
 		alert(jsonUtil.getFileExt(u));
 		if(u && jsonUtil.getFileExt(u) == "json"){
-			xhr.open("GET", u, true);  
+			xhr.open("GET", ""+u+"", true);  
 		    xhr.send(null);  
 		    xhr.onreadystatechange=function(){  
 		        if(xhr.readyState == 4 && xhr.status == 200){  
