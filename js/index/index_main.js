@@ -1,5 +1,4 @@
 var indexMain = {
-	userConf: null,
 	isAdmin: false,
 	isFlag: false
 };
@@ -9,11 +8,12 @@ function loginSubmit(){
 		p = document.getElementById("passWord").value,
 		isAdmin = indexMain.isAdmin;
 	if(u && p){
-		var uc = indexMain.userConf;
-		console.log("uc:");
-		Console.log(uc);
+		var url = "config/index/indexConf.json";
+		$.getJSON(url, function(data){
+			console.log(data);
+		});
+		
 		if(isAdmin){
-			var a = userConf.admin;
 			if(a){
 				if(u == a.username && p == a.password){
 					window.location.href = "pages/theme/theme_main.html";
@@ -44,13 +44,7 @@ function loginSubmit(){
 }
 
 function indexInitPage(){
-	var b = document.getElementById("loginBtn"),
-		userData = jsonUtil.getJsonFileData("config/index/indexConf.json");
-			alert(userData);
-			console.log(userData);
-		if(userData){
-			indexMain.userConf = userData;
-		}
+	var b = document.getElementById("loginBtn");
 	if(b){
 		if(typeof window.addEventListener != "undefined"){  
 	        // 非IE，支持addEventListener方法  
