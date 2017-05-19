@@ -35,6 +35,7 @@ jsonUtil.getJsonFileData = function(u){
 			alert("json配置文件地址错误!");  
 		}
 	} 
+	alert(r);
 	return r;
 }
 
