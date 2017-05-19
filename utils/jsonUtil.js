@@ -25,7 +25,7 @@ jsonUtil.getJsonFileData = function(u){
 		alert(u);
 		alert(jsonUtil.getFileExt(u));
 		if(u && jsonUtil.getFileExt(u) == "json"){
-			xhr.open("GET", "config/index/indexConf.json", true);  
+			xhr.open("GET", "../../config/index/indexConf.json", true);  
 		    xhr.send(null);  
 		    xhr.onreadystatechange=function(){  
 		        if(xhr.readyState == 4 && xhr.status == 200){  
