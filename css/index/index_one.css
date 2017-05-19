@@ -23,28 +23,25 @@ body{
 	position: relative;
     top: calc(10% + 200px);  left: calc(50% - 190px);
     height: 240px; width: 380px;
-    -moz-box-shadow: 0px 0px 8px 1px var(--color-666);
-    -webkit-box-shadow: 0px 0px 8px 1px var(--color-666);
-    box-shadow: 0px 0px 8px 1px var(--color-666);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
     font-size: 16px;
 }
 @-webkit-keyframes colors {
-    0% {border-color: #39f;}
-    15% {border-color: #F246C9;}
-    30% {border-color: #4453F2;}
-    45% {border-color: #44F262;}
-    60% {border-color: #F257D4;}
-    75% {border-color: #EDF255;}
-    90% {border-color: #F20006;}
-    100% {border-color: #39f;}
+    0% {border-color: #f00;}
+    15% {border-color: #ff8c00;}
+    30% {border-color: #ff0;}
+    45% {border-color: #0f0;}
+    60% {border-color: #00bfff;}
+    75% {border-color: #cf9;}
+    90% {border-color: #60c;}
+    100% {border-color: #f00;}
 }
 .index_login_border{
 	width: 100%; height: 100%;
 	border-width: 1px ;
 	border-style: solid;
+	-moz-box-shadow: 0px 0px 8px 1px var(--color-666);
+    -webkit-box-shadow: 0px 0px 8px 1px var(--color-666);
+    box-shadow: 0px 0px 8px 1px var(--color-666);
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -90,4 +87,19 @@ body{
 .index_login_border input[type="button"]:hover{
     border-color: var(--color-0f0);
     color: var(--color-0f0);
+}
+.index_login_tips{
+	opacity: 0;
+	height: 40px; width: 380px;
+	color: var(--color-fff);
+	font-size: 14px;
+	line-height: 40px;
+}
+.index_login_tips:hover{
+	opacity: .8;
+	cursor: default;
+}
+.index_login_tips span{
+	color: #F22613;
+	font-size: 16px;
 }

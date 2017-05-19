@@ -8,11 +8,6 @@ var userConf = {
 			num: 1,
 			username: "111111",
 			password: "111111"
-		},
-		{
-			num: 2,
-			username: "222222",
-			password: "222222"
-		},
+		}
 	]
 }

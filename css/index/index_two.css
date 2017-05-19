@@ -4,8 +4,8 @@
     margin: 0 auto; width: 100px; height: 160px;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-animation: spin 15s infinite linear;
-    animation: spin 15s infinite linear;
+    -webkit-animation: spin 30s infinite linear;
+    animation: spin 30s infinite linear;
 }
 .heart3d [class^="rib"] {
     position: absolute;
@@ -161,13 +161,13 @@
 }
 @-webkit-keyframes spin {
     to {
-        -webkit-transform: rotateY(360deg) rotateX(360deg);
-        transform: rotateY(360deg) rotateX(360deg);
+        -webkit-transform: rotateY(720deg) rotateX(1080deg);
+        transform: rotateY(720deg) rotateX(1080deg);
     }
 }
 @keyframes spin {
     to {
-        -webkit-transform: rotateY(360deg) rotateX(360deg);
-        transform: rotateY(360deg) rotateX(360deg);
+        -webkit-transform: rotateY(720deg) rotateX(1080deg);
+        transform: rotateY(720deg) rotateX(1080deg);
     }
 }
