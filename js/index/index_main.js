@@ -16,10 +16,12 @@ function checkUserLogin(d, u, p){
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
+		}else{
+			alert("ERROR: DATA OBJECT IS NULL!"); return false;
 		}
 	}else{
 		var v = d.visitor, l = v.length, i = 0;
-		if(l > 0){
+		if(v && l > 0){
 			clearInterval(indexMain.interval);
 			jsUtil.maskTopHide();
 			for (; i < l; i++) {
@@ -33,6 +35,8 @@ function checkUserLogin(d, u, p){
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
+		}else{
+			alert("ERROR: DATA OBJECT IS NULL!"); return false;
 		}
 	}
 }
@@ -48,7 +52,7 @@ function loginSubmit(){
 			if(data){
 				checkUserLogin(data, u, p);
 			}else{
-				alert("ERROR: DATA OBJECT IS NULL!");
+				alert("ERROR: DATA OBJECT IS NULL!"); return false;
 			}
 		});
 		indexMain.interval = setInterval(function(){
