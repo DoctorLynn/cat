@@ -3,50 +3,47 @@ var indexMain = {
 	isOk: false
 };
 
+function checkUserLogin(d, u, p){
+	var isAdmin = indexMain.isAdmin;
+	if(isAdmin){
+		var a = d.admin;
+		if(a){
+			if(u == a.username && p == a.password){
+				window.location.href = "pages/theme/theme_main.html";
+			}else{
+				alert("用户名或密码输入错误!!!");
+			}
+		}
+	}else{
+		var v = d.visitor, l = v.length, i = 0;
+		if(l > 0){
+			for (; i < l; i++) {
+				if(u == v[i].username && p == v[i].password){
+					indexMain.isOk = true;
+					break;
+				}
+			}
+			if(indexMain.isOk){
+				window.location.href = "pages/theme/theme_main.html";
+			}else{
+				alert("用户名或密码输入错误!!!");
+			}
+		}
+	}
+}
+
 function loginSubmit(){
 	var u = document.getElementById("userName").value,
-		p = document.getElementById("passWord").value,
-		isAdmin = indexMain.isAdmin,
-		d = null;
+		p = document.getElementById("passWord").value;
 	if(u && p){
 		var url = "config/index/indexConf.json";
 		$.getJSON(url, function(data){
-			console.log(data);
 			if(data){
-				d = data;				
-				console.log(d);
-			}
-			console.log(d);
-		});
-		if(d){
-			if(isAdmin){
-				var a = d.admin;
-				if(a){
-					if(u == a.username && p == a.password){
-						window.location.href = "pages/theme/theme_main.html";
-					}else{
-						alert("用户名或密码输入错误!!!");
-					}
-				}
+				checkUserLogin(data, u, p);
 			}else{
-				var v = d.visitor, l = v.length, i = 0;
-				if(l > 0){
-					for (; i < l; i++) {
-						if(u == v[i].username && p == v[i].password){
-							indexMain.isOk = true;
-							break;
-						}
-					}
-					if(indexMain.isOk){
-						window.location.href = "pages/theme/theme_main.html";
-					}else{
-						alert("用户名或密码输入错误!!!");
-					}
-				}
+				alert("ERROR: DATA OBJECT IS NULL!");
 			}
-		}else{
-			alert("ERROR: DATA OBJECT IS NULL!");
-		}
+		});
 	}else{
 		alert("请输入用户名和密码!");
 	}
