@@ -1,30 +1,17 @@
 var indexMain = {
+	userConf: null,
 	isAdmin: false,
 	isFlag: false
 };
-
-function indexInitPage(){
-	var b = document.getElementById("loginBtn");
-	if(b){
-		if(typeof window.addEventListener != "undefined"){  
-	        // 非IE，支持addEventListener方法  
-	        b.addEventListener("click", loginSubmit, false);  
-	    }else{  
-	    	//IE
-	        b.attachEvent("onclick", loginSubmit);  
-	    } 
-	}
-}
 
 function loginSubmit(){
 	var u = document.getElementById("userName").value,
 		p = document.getElementById("passWord").value,
 		isAdmin = indexMain.isAdmin;
 	if(u && p){
-		var uc = jsonUtil.getJsonFileData("config/index/indexConf.json");
-			alert(uc);
-			console.log(uc);
-			
+		var uc = indexMain.userConf;
+		console.log("uc:");
+		Console.log(uc);
 		if(isAdmin){
 			var a = userConf.admin;
 			if(a){
@@ -53,6 +40,25 @@ function loginSubmit(){
 		}
 	}else{
 		alert("请输入用户名和密码!");
+	}
+}
+
+function indexInitPage(){
+	var b = document.getElementById("loginBtn"),
+		userData = jsonUtil.getJsonFileData("config/index/indexConf.json");
+			alert(userData);
+			console.log(userData);
+		if(userData){
+			indexMain.userConf = userData;
+		}
+	if(b){
+		if(typeof window.addEventListener != "undefined"){  
+	        // 非IE，支持addEventListener方法  
+	        b.addEventListener("click", loginSubmit, false);  
+	    }else{  
+	    	//IE
+	        b.attachEvent("onclick", loginSubmit);  
+	    } 
 	}
 }
 

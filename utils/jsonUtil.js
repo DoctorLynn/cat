@@ -22,6 +22,7 @@ jsonUtil.getJsonFileData = function(u){
 	    alert("请升级至最新版本的浏览器");  
 	}  
 	if(xhr !=null){  
+		alert(jsonUtil.getFileExt(u));
 		if(u && jsonUtil.getFileExt(u) == "json"){
 			xhr.open("GET", u, true);  
 		    xhr.send(null);  
