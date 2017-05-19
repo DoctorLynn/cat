@@ -21,7 +21,7 @@ function loginSubmit(){
 		p = document.getElementById("passWord").value,
 		isAdmin = indexMain.isAdmin;
 	if(u && p){
-		var uc = jsonUtil.getJsonfileData("config/index/indexConf.json");
+		var uc = jsonUtil.getJsonFileData("config/index/indexConf.json");
 			alert(uc);
 			console.log(uc);
 			

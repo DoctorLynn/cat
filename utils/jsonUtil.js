@@ -5,14 +5,14 @@ var jsonUtil = {};
  * @param {Object} str
  */
 jsonUtil.getFileExt = function(str) { 
-	return (/\.[^\.]+$/.exec(str)).toLowerCase(); 
+	return str.split(".").pop().toLocaleLowerCase();
 }
 
 /**
  * 获取json文件中的数据
  * @param {Object} u
  */
-jsonUtil.getJsonfileData = function(u){
+jsonUtil.getJsonFileData = function(u){
 	var r = null, xhr = null;
 	if(window.XMLHttpRequest){  
 	    xhr = new XMLHttpRequest();  
@@ -31,7 +31,7 @@ jsonUtil.getJsonfileData = function(u){
 		        }  
 	   	 	};  
 		}else{
-			alert("json文件地址错误!");  
+			alert("json配置文件地址错误!");  
 		}
 	} 
 	return r;
