@@ -68,8 +68,8 @@ if(test !=null){
     test.onreadystatechange=function(){  
         if(test.readyState==4&&test.status==200){  
             var obj = JSON.parse(test.responseText);  
+            console.log("obj=");
             console.log(obj);
-            alert(obj);
         }  
     };  
   
