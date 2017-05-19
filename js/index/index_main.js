@@ -34,8 +34,10 @@ function checkUserLogin(d, u, p){
 
 function loginSubmit(){
 	var u = document.getElementById("userName").value,
-		p = document.getElementById("passWord").value;
+		p = document.getElementById("passWord").value,
+		t = new Date().getTime();
 	if(u && p){
+		jsUtil.maskTopShow();
 		var url = "config/index/indexConf.json";
 		$.getJSON(url, function(data){
 			if(data){
@@ -44,6 +46,14 @@ function loginSubmit(){
 				alert("ERROR: DATA OBJECT IS NULL!");
 			}
 		});
+		var s = setInterval(function(){
+			if(t && (new Date().getTime() - t) > 10000){
+				jsUtil.maskTopHide();
+				alert("请求超时,请稍候再试!");
+				clearInterval(s);
+				return false;
+			}
+		}, 1000);
 	}else{
 		alert("请输入用户名和密码!");
 	}
