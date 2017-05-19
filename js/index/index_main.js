@@ -1,0 +1,50 @@
+var indexMain = {
+	isAdmin: false,
+	isFlag: false
+};
+
+function indexInitPage(){
+	var b = document.getElementById("loginBtn");
+	if(b){
+		if(typeof window.addEventListener != "undefined"){  
+	        // 非IE，支持addEventListener方法  
+	        b.addEventListener("click", loginSubmit, false);  
+	    }else{  
+	    	//IE
+	        b.attachEvent("onclick", loginSubmit);  
+	    } 
+	}
+}
+
+function loginSubmit(){
+	var u = document.getElementById("userName").value,
+		p = document.getElementById("passWord").value,
+		isAdmin = indexMain.isAdmin;
+	if(u && p){
+		if(isAdmin){
+			
+		}else{
+			var v = userConf.visitor,
+				l = v.length,
+				i = 0;
+			if(l > 0){
+				for (; i < l; i++) {
+					if(u == v[i].username && p == v[i].password){
+						indexMain.isFlag = true;
+						break;
+					}
+				}
+				if(indexMain.isFlag){
+					alert("登录成功");
+					window.location.href = "";
+				}else{
+					alert("用户名或密码输入错误!!!");
+				}
+			}
+		}
+	}else{
+		alert("请输入用户名和密码!");
+	}
+}
+
+indexInitPage();

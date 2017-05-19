@@ -4,16 +4,41 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Start - Cat</title>
-	<style>
-		body {
-			background: #E4E6E9;
-		}
-	</style>
+	<title>welcome</title>
+    <link rel="stylesheet" href="css/index/index_one.css"/>
+    <link rel="stylesheet" href="css/index/index_two.css"/>
   </head>
   <body>
-
-		<h2 class="page-header text-primary">Welcome</small></h2>
-
+    <div class="index_main_outer" id="index_main_outer">
+        <div class="heart3d" id="heart3d"></div>
+        <script>
+            	var o = document.getElementById("index_main_outer"), 
+            			r = Math.floor(Math.random()*6 + 1);
+				  		if(r > 0 && r <= 6){
+					  			var u = "images/index/index_bg_"+r+".jpg";
+						  		o.style.backgroundImage = "url("+u+")";
+				  		}
+            	var heart = document.getElementById("heart3d"),
+            			fragment = document.createDocumentFragment(),
+									d = null;
+				  		for(var i = 1; i <=36; i++){
+					  			d = document.createElement("div");
+					  			d.className = "rib"+i+""; 
+					  			fragment.appendChild(d); 
+				  		}
+				  		if(fragment){
+				  				heart.appendChild(fragment);
+				  		}
+            </script>
+        <div class="index_login_div">
+            <div class="index_login_border">
+                    <label for="UserName">UserName</label><input id="userName" name="UserName" type="text" placeholder="UserName" title="请输入用户名"/>
+                    <label for="PassWord">PassWord</label><input id="passWord" name="PassWord" type="password" placeholder="PassWord" title="请输入密码"/>
+                    <input id="loginBtn" type="button" value="LOG IN" title="登录"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="config/index/indexConf.js" ></script>
+    <script type="text/javascript" src="js/index/index_main.js" ></script>
   </body>
 </html>

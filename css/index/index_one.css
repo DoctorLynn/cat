@@ -1,0 +1,93 @@
+:root{
+    --color-black: #000;
+    --color-666: #666;
+    --color-999: #999;
+    --color-fff: #fff;
+    --color-0f0: #0f0;
+}
+*{outline: none;}
+html, 
+body, 
+.index_main_outer{
+	width: 100%; height: 100%; margin: 0; padding: 0;
+}
+body{
+	background-color: var(--color-black);
+    font-family: 'Helvetica', 'Lucida Grande', 'Arial', sans-serif;
+}
+.index_main_outer{
+	background-repeat: no-repeat; 
+	background-size: cover;
+}
+.index_login_div{
+	position: relative;
+    top: calc(10% + 200px);  left: calc(50% - 190px);
+    height: 240px; width: 380px;
+    -moz-box-shadow: 0px 0px 8px 1px var(--color-666);
+    -webkit-box-shadow: 0px 0px 8px 1px var(--color-666);
+    box-shadow: 0px 0px 8px 1px var(--color-666);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+@-webkit-keyframes colors {
+    0% {border-color: #39f;}
+    15% {border-color: #F246C9;}
+    30% {border-color: #4453F2;}
+    45% {border-color: #44F262;}
+    60% {border-color: #F257D4;}
+    75% {border-color: #EDF255;}
+    90% {border-color: #F20006;}
+    100% {border-color: #39f;}
+}
+.index_login_border{
+	width: 100%; height: 100%;
+	border-width: 1px ;
+	border-style: solid;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: colors;
+    -webkit-animation-timing-function: ease;
+}
+.index_login_border label{
+    display: block;
+    padding: 20px 10px 5px 15px;
+    color: var(--color-fff);
+}
+.index_login_border input{
+    display: block;
+    margin: 0 10px 0 15px;
+    width: 90%; height: 32px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--color-fff);
+    padding: 5px 0 0 5px;
+    color: var(--color-fff);
+    font-size: 18px;
+}
+.index_login_border input:focus{
+    border-bottom: 1px solid var(--color-0f0);
+    color: var(--color-0f0);
+}
+.index_login_border input[type="button"]{
+    position: relative; top: 20px; left: calc(90% - 100px);
+    width: 100px; height: 32px; padding: 5px;
+    color: var(--color-fff);
+    border: 1px solid var(--color-fff);
+    font-weight: lighter;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 0 1px 1px var(--color-black);
+    cursor: pointer;
+}
+.index_login_border input[type="button"]:hover{
+    border-color: var(--color-0f0);
+    color: var(--color-0f0);
+}
