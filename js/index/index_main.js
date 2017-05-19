@@ -9,6 +9,7 @@ function checkUserLogin(d, u, p){
 		var a = d.admin;
 		if(a){
 			if(u == a.username && p == a.password){
+				jsUtil.maskTopHide();
 				window.location.href = "pages/theme/theme_main.html";
 			}else{
 				alert("用户名或密码输入错误!!!");
@@ -24,6 +25,7 @@ function checkUserLogin(d, u, p){
 				}
 			}
 			if(indexMain.isOk){
+				jsUtil.maskTopHide();
 				window.location.href = "pages/theme/theme_main.html";
 			}else{
 				alert("用户名或密码输入错误!!!");
@@ -49,8 +51,8 @@ function loginSubmit(){
 		var s = setInterval(function(){
 			if(t && (new Date().getTime() - t) > 10000){
 				jsUtil.maskTopHide();
-				alert("请求超时,请稍候再试!");
 				clearInterval(s);
+				alert("请求超时,请稍候再试!");
 				return false;
 			}
 		}, 1000);
