@@ -1,42 +1,46 @@
 var indexMain = {
 	isAdmin: false,
-	isFlag: false
+	isOk: false
 };
 
 function loginSubmit(){
 	var u = document.getElementById("userName").value,
 		p = document.getElementById("passWord").value,
-		isAdmin = indexMain.isAdmin;
+		isAdmin = indexMain.isAdmin,
+		d = null;
 	if(u && p){
 		var url = "config/index/indexConf.json";
 		$.getJSON(url, function(data){
-			console.log(data);
+			data && d = data;
 		});
-		
-		if(isAdmin){
-			if(a){
-				if(u == a.username && p == a.password){
-					window.location.href = "pages/theme/theme_main.html";
-				}else{
-					alert("用户名或密码输入错误!!!");
+		if(d){
+			if(isAdmin){
+				var a = d.admin;
+				if(a){
+					if(u == a.username && p == a.password){
+						window.location.href = "pages/theme/theme_main.html";
+					}else{
+						alert("用户名或密码输入错误!!!");
+					}
+				}
+			}else{
+				var v = d.visitor, l = v.length, i = 0;
+				if(l > 0){
+					for (; i < l; i++) {
+						if(u == v[i].username && p == v[i].password){
+							indexMain.isOk = true;
+							break;
+						}
+					}
+					if(indexMain.isOk){
+						window.location.href = "pages/theme/theme_main.html";
+					}else{
+						alert("用户名或密码输入错误!!!");
+					}
 				}
 			}
 		}else{
-			
-//			var v = userConf.visitor, l = v.length, i = 0;
-//			if(l > 0){
-//				for (; i < l; i++) {
-//					if(u == v[i].username && p == v[i].password){
-//						indexMain.isFlag = true;
-//						break;
-//					}
-//				}
-//				if(indexMain.isFlag){
-//					window.location.href = "pages/theme/theme_main.html";
-//				}else{
-//					alert("用户名或密码输入错误!!!");
-//				}
-//			}
+			alert("ERROR: DATA OBJECT IS NULL!");
 		}
 	}else{
 		alert("请输入用户名和密码!");
