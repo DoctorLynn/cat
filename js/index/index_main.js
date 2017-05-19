@@ -21,6 +21,10 @@ function loginSubmit(){
 		p = document.getElementById("passWord").value,
 		isAdmin = indexMain.isAdmin;
 	if(u && p){
+		var uc = jsonUtil.getJsonfileData("config/index/indexConf.json");
+			alert(uc);
+			console.log(uc);
+			
 		if(isAdmin){
 			var a = userConf.admin;
 			if(a){
@@ -31,7 +35,6 @@ function loginSubmit(){
 				}
 			}
 		}else{
-			showJson();
 			
 //			var v = userConf.visitor, l = v.length, i = 0;
 //			if(l > 0){
@@ -52,29 +55,6 @@ function loginSubmit(){
 		alert("请输入用户名和密码!");
 	}
 }
-
-function showJson(){  
-var test;  
-if(window.XMLHttpRequest){  
-    test = new XMLHttpRequest();  
-}else if(window.ActiveXObject){  
-    test = new window.ActiveXObject();  
-}else{  
-    alert("请升级至最新版本的浏览器");  
-}  
-if(test !=null){  
-    test.open("GET","config/index/indexConf.json",true);  
-    test.send(null);  
-    test.onreadystatechange=function(){  
-        if(test.readyState==4&&test.status==200){  
-            var obj = JSON.parse(test.responseText);  
-            console.log("obj=");
-            console.log(obj);
-        }  
-    };  
-  
-}  
-}  
 
 window.onload = function(){  
     indexInitPage();
