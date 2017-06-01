@@ -4,6 +4,22 @@ var indexMain = {
 	interval: null
 };
 
+function setSessionStorage(){
+	var state = true;
+	if(window.sessionStorage && typeof window.sessionStorage == "object"){
+		try{
+			sessionStorage.setItem("loginState", state);
+		}catch(e){
+			alert("cache error:"+e);		
+			state = false;
+		}
+	}else{
+		alert("当前浏览器不支持缓存");
+		state = false;
+	}
+	return state;
+}
+
 function checkUserLogin(d, u, p){
 	var isAdmin = indexMain.isAdmin;
 	if(isAdmin){
@@ -12,7 +28,10 @@ function checkUserLogin(d, u, p){
 			clearInterval(indexMain.interval);
 			jsUtil.maskTopHide();
 			if(u == a.username && p == a.password){
-				window.location.href = "pages/theme/theme_main.html";
+				var s = setSessionStorage();
+				if(s){
+					window.location.href = "pages/theme/theme_main.html";
+				}
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
@@ -31,7 +50,10 @@ function checkUserLogin(d, u, p){
 				}
 			}
 			if(indexMain.isOk){
-				window.location.href = "pages/theme/theme_main.html";
+				var s = setSessionStorage();
+				if(s){
+					window.location.href = "pages/theme/theme_main.html";
+				}
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
