@@ -60,3 +60,4 @@ body,
 .theme_tabsbar_ul_li:hover, 
 .theme_tabsbar_ul_li_welcome:hover, 
 .tabs_select{border-bottom-color: #0092e0; color: #fff; cursor: default;}
+.myInfo_layer{display: none; position: absolute; top: 0; left: 0; width: 400px; height: 300px; background: #039BE5;}

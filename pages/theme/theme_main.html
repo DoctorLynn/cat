@@ -26,9 +26,9 @@
 								<i class="material-icons">arrow_drop_down</i>
 								<div class="theme_top_dialog">
 									<ul>
-										<li><i class="material-icons">person</i><span>我的信息</span></li>
-										<li><i class="material-icons">people</i><span>切换用户</span></li>
-										<li><i class="material-icons">settings_power</i><span>退出登录</span></li>
+										<li onclick="theme.clickMyInfo();"><i class="material-icons">person</i><span>我的信息</span></li>
+										<li onclick="theme.clickChangeUser();"><i class="material-icons">people</i><span>切换用户</span></li>
+										<li onclick="theme.clickLogOff();"><i class="material-icons">settings_power</i><span>退出登录</span></li>
 									</ul>
 								</div>
 							</div>
@@ -73,9 +73,11 @@
 			<div class="theme_space_line"></div>
 			<div class="theme_bottom">支持IE8以上、谷歌、火狐浏览器</div>
 		</div>
+		<div class="myInfo_layer"></div>
 		<script type="text/javascript" src="../../utils/jquery-3.2.1.min.js" ></script>
 		<script type="text/javascript" src="../../utils/checkup.js" ></script>
 		<script type="text/javascript" src="../../utils/materialize/js/materialize.min.js" ></script>
+		<script type="text/javascript" src="../../utils/jsUtil.js" ></script>
 		<script type="text/javascript" src="../../js/theme/theme.js" ></script>
 	</body>
 </html>

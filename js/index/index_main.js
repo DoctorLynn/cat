@@ -28,10 +28,7 @@ function checkUserLogin(d, u, p){
 			clearInterval(indexMain.interval);
 			jsUtil.maskTopHide();
 			if(u == a.username && p == a.password){
-				var s = setSessionStorage();
-				if(s){
-					window.location.href = "pages/theme/theme_main.html";
-				}
+				setSessionStorage() && (window.location.href = "pages/theme/theme_main.html");
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
@@ -50,10 +47,7 @@ function checkUserLogin(d, u, p){
 				}
 			}
 			if(indexMain.isOk){
-				var s = setSessionStorage();
-				if(s){
-					window.location.href = "pages/theme/theme_main.html";
-				}
+				setSessionStorage() && (window.location.href = "pages/theme/theme_main.html");
 			}else{
 				alert("用户名或密码输入错误!!!"); return false;
 			}
@@ -105,4 +99,5 @@ function indexInitPage(){
 
 window.onload = function(){  
     indexInitPage();
+    setSessionStorage() && (window.location.href = "pages/theme/theme_main.html");
 };
