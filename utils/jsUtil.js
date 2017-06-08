@@ -49,6 +49,9 @@ jsUtil.maskTopHide = function(){
             dialogDivTopClose.onmouseover = function(){
             	dialogDivTopClose.style.color = "#f00";
             }
+            dialogDivTopClose.onmouseout = function(){
+            	dialogDivTopClose.style.color = "#555";
+            }
             dialogDivTopClose.onclick = function(event){
             	event.stopPropagation();
             	closeDialog();
