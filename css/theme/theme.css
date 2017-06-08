@@ -1,4 +1,4 @@
-*{outline: none; list-style: none; text-decoration: none;}
+*{outline: none; list-style: none; text-decoration: none; box-sizing: border-box;}
 html, 
 body, 
 .theme_main{width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background: #eef6f9; font-size: 14px; font-family: GillSans, Calibri, Trebuchet, sans-serif;}
@@ -45,7 +45,8 @@ body,
 .theme_middle_left_nav, 
 .theme_middle_right_nav{display: flex; justify-content: space-between;height: 28px; padding: 2px 4px 0 4px; line-height: 24px; background: #dff2ff; border-bottom: 1px solid #b3e5fc;}
 .theme_middle_left_con, 
-.theme_middle_right_con{height: calc(100% - 28px);}
+.theme_middle_right_con{height: calc(100% - 28px); overflow: hidden;}
+.theme_middle_right_con iframe{width: 100%; height: 100%; margin: 0; padding: 0; border: 0; outline: none;}
 .theme_tabsbar_close_all{width: 24px; height: 100%;}
 .theme_tabsbar_close_all>i{color: #0092e0; cursor: pointer;}
 .theme_tabsbar_close_all>i:hover{color: #ef6c00;}

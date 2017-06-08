@@ -50,6 +50,5 @@ theme.getMenuInfo = function() {
 $(function(){
 	//获取功能菜单信息
 	theme.getMenuInfo();
-	
 });
 
